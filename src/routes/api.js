@@ -17,10 +17,10 @@ app.post('/trips', (req, res) => {
 
         const directTrips = trips.filter((el) => el.departure_place.city_name == tripQuery.fn)
         const notDirectTrips = trips.filter(el => !directTrips.includes(el));
-        const aggregatedNotDirectTrips = await getAggregatedTrips(notDirectTrips, tripQuery.fn);
+        const aggregatedNotDirectTrips = [] || await getAggregatedTrips(notDirectTrips, tripQuery.fn);
 
         const allTrips = directTrips.concat(aggregatedNotDirectTrips);
 
-        res.send(allTrips);
+        res.send(trips);
     });
 });
