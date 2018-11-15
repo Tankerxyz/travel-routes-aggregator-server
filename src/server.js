@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const apicache = require('apicache');
+const morgan = require('morgan');
 
 const request = require("request-promise-native");
 const queryString = require('querystring');
@@ -12,6 +13,8 @@ const { blablaConfig, server: serverConfig } = require('../config');
 const routes = require('./routes');
 
 const { getTripQuery } = require('./utils');
+
+app.use(morgan('tiny'));
 
 app.use(bodyParser.json());
 
