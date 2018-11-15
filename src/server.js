@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const apicache = require('apicache');
 
 const request = require("request-promise-native");
 const queryString = require('querystring');
@@ -13,6 +14,8 @@ const routes = require('./routes');
 const { getTripQuery } = require('./utils');
 
 app.use(bodyParser.json());
+
+app.use(apicache.middleware('5 minutes'));
 
 app.use('/api/trips', (req, res, next) => {
     const query = {...blablaConfig.defaultQueryOptions, ...req.body};

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apicache": "^1.2.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "moment": "^2.22.2",

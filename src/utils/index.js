@@ -3,7 +3,7 @@ const config = require('../../config').blablaConfig;
 const moment = require('moment');
 
 getUriFromObj = (obj) => {
-    const valuedKeys = Object.keys(obj).filter((k) => !!obj[k] && obj[k] != 'null');
+    const valuedKeys = Object.keys(obj).filter((k) => !!obj[k]);
     return valuedKeys.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`).join('&');
 };
 

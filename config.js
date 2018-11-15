@@ -13,7 +13,6 @@ module.exports = {
         db: "2018-10-30",
         locale: "ru_RU",
         limit: 100,
-        radius: 300,
       },
     },
   };
